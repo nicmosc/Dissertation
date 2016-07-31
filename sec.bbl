@@ -1,10 +1,8 @@
 \begin{thebibliography}{1}
 
-\bibitem{website:raspberry}
-Steve Breuning.
-\newblock Sending data to an http server - get and post methods, 2014.
-\newblock [Online; accessed 14-February-2016].
-\newblock URL:
-  \url{http://raspberrywebserver.com/cgiscripting/sending-data-to-an-HTTP-server-get-and-post-methods.html#disqus_thread}.
+\bibitem{book:BSL}
+Rachel Sutton-Spence and Bencie Woll.
+\newblock {\em The Linguistics of British Sign Language: An Introduction}.
+\newblock Cambridge University Press, The Edimburgh Building, Cambridge, 1999.
 
 \end{thebibliography}
