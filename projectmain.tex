@@ -5,17 +5,15 @@
 %load any additional packages
 \usepackage{amssymb}
 \usepackage{url}
-\usepackage[toc,page]{appendix}
+%\usepackage[toc,page]{appendix}
 \usepackage{graphicx}
 \graphicspath{{./figures/}}
 \DeclareGraphicsExtensions{.pdf,.png}
 
 %============ BIBLIOGRAPHY AND REFS PACKAGES ========%
-\usepackage{multibib}
-\newcites{x}{References}
-\newcites{sec}{Background Reading}
-
-\usepackage{lipsum}
+%\usepackage{multibib}
+%\newcites{x}{References}
+%\newcites{sec}{Background Reading}
 
 %============ CUSTOM CHAPTER NUMBER ========%
 
@@ -110,17 +108,33 @@ The report will read as follows: in chapter 2 we will give a brief introduction 
 %===================== CHAPTER 2 ===================%
 
 \chapter{Background}
-\section{British Sign Language}
-British Sign Language, often shortened to BSL, has been an officially recognised language since 2003 \citex{website:signature}. Like English, it has its own grammar \citex{website:deafness} and its own lexicon. While not as large as its written counterpart, there are enough signs to convey the same ideas in sign language, as many can be combined (\textit{compounds}, see section \ref{linguistics}) to create new meanings. However BSL is not the only signed language; each country has their own with different dialects by region. ...  
-\subsection{Linguistics}
-\label{linguistics}
+\section{British Sign Language: Linguistics Overview}
 This section will give a short introduction to the linguistics of British Sign Language, including common grammar rules, its morphology and how it differs from written English. Please note that only the most general information is described here, that is enough to follow concepts described in section \ref{existing methods} and the implementation of the system (section \ref{implementation}).
 
+British Sign Language, often shortened to BSL, has been an officially recognised language since 2003 \citex{website:signature}. Like English, it has its own grammar \citex{website:deafness} and its own lexicon. While not as large as its written counterpart, there are enough signs to convey the same ideas in sign language, as many can be combined (\textit{compounds}, see section \ref{linguistics}) to create new meanings. However BSL is not the only signed language; each country has their own with different dialects by region. ...  
 
+Talk about non-manual features here
 
+Since BSL can only be transmitted through signing, there is no formal written form. Many different formats exist such as Stokoe, designed only for representing hand movements (thus carries no information about non-manual features), HamNoSys (Hamburg Notation System) that can represent any signed language, and more. The most commonly used method to represent sign language without needing to learn the notation (both Stokoe and HamNoSys require additional knowledge to be decoded) is through \textit{gloss}. Gloss uses the most basic representation of the sign in its English written form. For example if one wants to describe a situation where a girl is eating an apple, the gloss would be GIRL EAT APPLE. 
 
+\subsection{Morphology and Morphemes}
+A morpheme in BSL is considered as the smallest unit of meaning in a word or sign. We can combine them to form signs that have several meaningful parts but are still considered a single sign. We distinguish between \textit{monomorphemic} signs (cannot be further subdivided) like TRUE, SAY, MOUSE and \textit{polymorphemic} which are a combination of 
+\subsection{Verbs}
+\subsubsection{Tense, Aspect and Manner}
+\subsubsection{Verb types}
+Topographic vs. Syntactic space, plain, agreement, spatial verbs
 
-\subsection{Online Resources}
+\subsection{Questions and Negations}
+Wh-, Facial/Head movements etc.
+\subsection{Fingerspelling}
+
+\subsection{Non-manual features}
+\subsubsection{Spoken and Oral Components}
+Spoken components, oral components
+\subsubsection{Facial Expressions and Head Movements}
+\subsubsection{Eye Gaze}
+
+\section{Online Resources}
 
 \section{Machine Translation}
 \label{machine translation}
