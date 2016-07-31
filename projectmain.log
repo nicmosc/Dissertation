@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.8)  31 JUL 2016 12:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.8)  31 JUL 2016 13:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -108,18 +108,18 @@ Package: multibib 2008/12/10 v1.4 Multiple bibliographies for one document.
 ) (./projectmain.aux)
 \openout1 = `projectmain.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -174,8 +174,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
+(grfext)             [.pdf,.png,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
@@ -185,7 +184,7 @@ e
 <oxlogo.png, id=1, 2007.5pt x 2513.39pt>
 File: oxlogo.png Graphic file (type png)
  <use oxlogo.png>
-Package pdftex.def Info: oxlogo.png used on input line 56.
+Package pdftex.def Info: oxlogo.png used on input line 57.
 (pdftex.def)             Requested size: 91.04881pt x 113.97974pt.
  [1
 
@@ -197,11 +196,11 @@ o.png>] [2
 [3
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 67.
+LaTeX Font Info:    Try loading font information for U+msa on input line 68.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 67.
+LaTeX Font Info:    Try loading font information for U+msb on input line 68.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -229,13 +228,13 @@ Chapter 1.
 
 ]
 
-pdfTeX warning: /usr/texbin/pdflatex (file ./figures/BSL-cropped.pdf): PDF incl
-usion: found PDF version <1.7>, but at most version <1.5> allowed
-<./figures/BSL-cropped.pdf, id=36, 562.1pt x 338.26375pt>
-File: ./figures/BSL-cropped.pdf Graphic file (type pdf)
+pdfTeX warning: /usr/texbin/pdflatex (file ./figures/system-overview.pdf): PDF 
+inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<./figures/system-overview.pdf, id=36, 562.1pt x 338.26375pt>
+File: ./figures/system-overview.pdf Graphic file (type pdf)
 
-<use ./figures/BSL-cropped.pdf>
-Package pdftex.def Info: ./figures/BSL-cropped.pdf used on input line 98.
+<use ./figures/system-overview.pdf>
+Package pdftex.def Info: ./figures/system-overview.pdf used on input line 99.
 (pdftex.def)             Requested size: 393.46732pt x 236.78299pt.
 
 
@@ -244,7 +243,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./figures/BSL-cropped.pdf>] [3]
+[2 <./figures/system-overview.pdf>] [3]
 Chapter 2.
 [4
 
@@ -309,8 +308,8 @@ Underfull \hbox (badness 1019) in paragraph at lines 50--54
 ] (./projectmain.aux) ) 
 Here is how much of TeX's memory you used:
  2298 strings out of 493117
- 31218 string characters out of 6135434
- 91002 words of memory out of 5000000
+ 31238 string characters out of 6135434
+ 90880 words of memory out of 5000000
  5710 multiletter control sequences out of 15000+600000
  11573 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -322,7 +321,7 @@ sfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmtt12.pfb>
-Output written on projectmain.pdf (19 pages, 695325 bytes).
+Output written on projectmain.pdf (19 pages, 695496 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream

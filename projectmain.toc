@@ -4,7 +4,11 @@
 \contentsline {section}{\numberline {1.3}Structure}{2}
 \contentsline {chapter}{\numberline {2}Background}{4}
 \contentsline {section}{\numberline {2.1}British Sign Language}{4}
+\contentsline {subsection}{\numberline {2.1.1}Linguistics}{4}
+\contentsline {subsection}{\numberline {2.1.2}Online Resources}{4}
 \contentsline {section}{\numberline {2.2}Machine Translation}{4}
+\contentsline {subsection}{\numberline {2.2.1}Classical}{4}
+\contentsline {subsection}{\numberline {2.2.2}Statistical}{4}
 \contentsline {section}{\numberline {2.3}Existing Methods}{4}
 \contentsline {section}{\numberline {2.4}Personal Work}{4}
 \contentsline {section}{\numberline {2.5}Summary}{4}
