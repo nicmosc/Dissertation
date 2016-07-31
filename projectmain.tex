@@ -87,9 +87,8 @@ For most people around the world, communication is achieved orally by speaking. 
 \section{Motivation}
 The problem arises when hearing and Deaf individuals need to communicate. Deaf individuals are taught to read and write English from a young age, but it was found that they have difficulties understanding text with a reading level above that of primary school students \citex{paper:deaf-edu}. Thus it is not enough for hearing individuals to rely on written text to communicate with their community. More and more people are learning BSL even though they have perfectly fine hearing. There are certificates that can be obtained to work with Deaf individuals \citex{website:signature}. Taking lessons from BSL teachers and practising with the community helps to learn the language.
 
-Online resources such as UCL's BSL Sign Bank \citex{website:bsl-sign-bank} and SignBSL.com \citex{website:sign-bsl} offer clips of signers showing words and phrases in BSL for learners and curious people?. The main issue is that they are highly static. Analogously to an English dictionary, it is only useful for looking up individual signs and not \textit{translating} phrases. Research has been carried out to make sign language available to others who rely on spoken English as their primary mean of communication by trying to translate from one language to the other. Although most of the research in the field of automated sign language translation is focussed on ASL, the same concepts apply to BSL, given they are very close since they both originate from English.
-
-Some of those projects went a step further and gave the output as a 3D animation, rather than just a textual representation. Due to the then high computational power necessary to run these systems, none have been made easily available to the public and were just kept as experiments. In 2006, IBM created a fully working system \citex{website:IBM} that allowed users to speak and see the translation from English to BSL in real time; however it has been disregarded and is not obtainable any more. 
+Online resources such as UCL's BSL Sign Bank \citex{website:bsl-sign-bank} and SignBSL.com \citex{website:sign-bsl} offer clips of signers showing words and phrases in BSL for learners and curious people?. The main issue is that they are highly static. Analogously to an English dictionary, it is only useful for looking up individual signs and not \textit{translating} phrases. Automated translation has been an ongoing challenge in the field of
+computational linguistics, and we are finally seeing very positive results thanks to the recent developments in machine learning. Since spoken (written) languages are heavily dependent on their syntactic components, they are relatively easy to formalise in such a way that a machine can interpret a sentence and perform operations on it to transition from one language to another. More recently, there have also been attempts at doing so with signed languages such as ASL (American Sign Language) and BSL. Given that there is no formally typed grammar for BSL, it is not easy to find a model that encapsulates all key elements involved, such as facial expressions and eye gaze. In addition, since the language is only signed, the only way to see if an interpretation is correct, is through visual output. While some past implementations have been successful, due to the then high computational power necessary to run these systems, most of them are now outdated or have been left at a prototype stage. In 2006, IBM created a fully working system \citex{website:IBM} that allowed users to speak and see the translation from English to BSL in real time; however it has been disregarded and is not available any more. 
 
 \section{Objectives}
 This project will build upon previous work and attempt to solve the interlingual translation from English to British Sign Language by implementing a web application where signs are visualised through a virtual avatar. Behaviour will closely follow that of other established translation systems such as Google Translate where users can type a sentence and get a result in real-time. Through rule-based translation methods (discussed in section \ref{machine translation}) and 3D animation techniques the system will allow users to not only find out what a particular sentence corresponds to in BSL, but also learn and hopefully practice their skills. Figure \ref{fig:sys-overview} shows a conceptual overview of the system pipeline; this figure will be references multiple times throughout the report.
@@ -108,10 +107,15 @@ The report will read as follows: in chapter 2 we will give a brief introduction 
 
 \chapter{Background}
 \section{British Sign Language}
-British Sign Language, often shortened to BSL, has been an officially recognised language since 2003 \citex{website:signature}. Like English, it has its own grammar.
-
-\citex{website:deafness} \citex{paper:statistical-SL-MT}
+British Sign Language, often shortened to BSL, has been an officially recognised language since 2003 \citex{website:signature}. Like English, it has its own grammar \citex{website:deafness} and its own lexicon. While not as large as its written counterpart, there are enough signs to convey the same ideas in sign language, as many can be combined (\textit{compounds}, see section \ref{linguistics}) to create new meanings. However BSL is not the only signed language; each country has their own with different dialects by region. ...  
 \subsection{Linguistics}
+\label{linguistics}
+This section will give a short introduction to the linguistics of British Sign Language, including common grammar rules, its morphology and how it differs from written English. Please note that only the most general information is described here, that is enough to follow concepts described in section \ref{existing methods} and the implementation of the system (section \ref{implementation}).
+
+
+
+
+
 \subsection{Online Resources}
 
 \section{Machine Translation}
@@ -120,6 +124,7 @@ British Sign Language, often shortened to BSL, has been an officially recognised
 \subsection{Statistical}
 
 \section{Existing Methods}
+\label{existing methods}
 \section{Personal Work}
 \section{Summary}
 
@@ -136,6 +141,7 @@ British Sign Language, often shortened to BSL, has been an officially recognised
 %===================== CHAPTER 4 ===================%
 
 \chapter{Implementation}
+\label{implementation}
 
 \section{Rule-Based MT in Python}
 	\subsection{Pipeline}
