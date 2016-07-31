@@ -1,6 +1,8 @@
-.aux
-.lof
-.log
-.pdf
-.gz
-.toc
+*.aux
+*.lof
+*.log
+*.pdf
+*.gz
+*.toc
+*.bbl
+*.blg
