@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.8)  31 JUL 2016 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.5.8)  31 JUL 2016 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -95,7 +95,11 @@ Package: multibib 2008/12/10 v1.4 Multiple bibliographies for one document.
 (./sec.aux)
 \openout4 = `sec.aux'.
 
- (/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count93
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip43
 \f@ncyO@elh=\skip44
 \f@ncyO@erh=\skip45
@@ -105,34 +109,35 @@ Package: multibib 2008/12/10 v1.4 Multiple bibliographies for one document.
 \f@ncyO@erf=\skip49
 \f@ncyO@olf=\skip50
 \f@ncyO@orf=\skip51
-) (./projectmain.aux)
+)
+(./projectmain.aux)
 \openout1 = `projectmain.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count93
+\scratchcounter=\count94
 \scratchdimen=\dimen105
 \scratchbox=\box26
-\nofMPsegments=\count94
-\nofMParguments=\count95
+\nofMPsegments=\count95
+\nofMParguments=\count96
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count96
+\MPscratchCnt=\count97
 \MPscratchDim=\dimen106
-\MPnumerator=\count97
-\makeMPintoPDFobject=\count98
+\MPnumerator=\count98
+\makeMPintoPDFobject=\count99
 \everyMPtoPDFconversion=\toks17
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -184,7 +189,7 @@ e
 <oxlogo.png, id=1, 2007.5pt x 2513.39pt>
 File: oxlogo.png Graphic file (type png)
  <use oxlogo.png>
-Package pdftex.def Info: oxlogo.png used on input line 57.
+Package pdftex.def Info: oxlogo.png used on input line 61.
 (pdftex.def)             Requested size: 91.04881pt x 113.97974pt.
  [1
 
@@ -196,11 +201,11 @@ o.png>] [2
 [3
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
+LaTeX Font Info:    Try loading font information for U+msa on input line 72.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 72.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -234,8 +239,11 @@ inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: ./figures/system-overview.pdf Graphic file (type pdf)
 
 <use ./figures/system-overview.pdf>
-Package pdftex.def Info: ./figures/system-overview.pdf used on input line 99.
-(pdftex.def)             Requested size: 393.46732pt x 236.78299pt.
+Package pdftex.def Info: ./figures/system-overview.pdf used on input line 102.
+(pdftex.def)             Requested size: 421.57397pt x 253.69717pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -243,77 +251,77 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./figures/system-overview.pdf>] [3]
+[2] [3 <./figures/system-overview.pdf>] [4] [5]
 Chapter 2.
-[4
+[6
 
-]
+] [7]
 Chapter 3.
-[5
+[8
 
 ]
 Chapter 4.
-[6
+[9
 
 ]
 Overfull \vbox (25.21338pt too high) has occurred while \output is active []
 
 
-[7]
+[10]
 Chapter 5.
-[8
+[11
 
 ]
 Chapter 6.
-[9
+[12
 
 ]
 Appendix A.
-(./x.bbl [10
+(./x.bbl [13
 
 ]
-Underfull \hbox (badness 3884) in paragraph at lines 30--35
+Underfull \hbox (badness 3884) in paragraph at lines 23--28
 []\OT1/cmr/m/n/12 Action on Hear-ing Loss.  Deaf-ness.  [On-line; ac-cessed 14-
 February-
  []
 
 
-Underfull \hbox (badness 7379) in paragraph at lines 30--35
+Underfull \hbox (badness 7379) in paragraph at lines 23--28
 \OT1/cmr/m/n/12 2016].  URL: $\OT1/cmtt/m/n/12 http : / / www . actiononhearing
 loss . org . uk / your-[]hearing /
  []
 
 
-Underfull \hbox (badness 7186) in paragraph at lines 37--42
+Underfull \hbox (badness 7186) in paragraph at lines 30--35
 []\OT1/cmr/m/n/12 Action on Hear-ing Loss.  Statis-tics.  [On-line; ac-cessed 2
 0-April-
  []
 
 
-Underfull \hbox (badness 3930) in paragraph at lines 37--42
+Underfull \hbox (badness 3930) in paragraph at lines 30--35
 \OT1/cmr/m/n/12 2016].  URL: $\OT1/cmtt/m/n/12 https : / / www . actiononhearin
 gloss . org . uk / your-[]hearing /
  []
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 50--54
+Underfull \hbox (badness 1019) in paragraph at lines 43--47
 []\OT1/cmr/m/n/12 UCL.  Bsl sign bank.  [On-line; ac-cessed 30-July-2016].  URL
 : $\OT1/cmtt/m/n/12 http : / /
  []
 
-) [11
+) [14
 
-] (./sec.bbl) [12
+] (./sec.bbl) [15
 
 ] (./projectmain.aux) ) 
 Here is how much of TeX's memory you used:
- 2298 strings out of 493117
- 31238 string characters out of 6135434
- 90880 words of memory out of 5000000
- 5710 multiletter control sequences out of 15000+600000
+ 2479 strings out of 493117
+ 33394 string characters out of 6135434
+ 182480 words of memory out of 5000000
+ 5887 multiletter control sequences out of 15000+600000
  11573 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,43p,909b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,43p,1246b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmcsc10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
@@ -321,10 +329,10 @@ sfonts/cm/cmr12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmti12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmtt12.pfb>
-Output written on projectmain.pdf (19 pages, 695496 bytes).
+Output written on projectmain.pdf (22 pages, 701687 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 113 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

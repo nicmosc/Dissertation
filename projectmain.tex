@@ -15,14 +15,18 @@
 \newcites{x}{References}
 \newcites{sec}{Background Reading}
 
+\usepackage{lipsum}
+
 %============ CUSTOM CHAPTER NUMBER ========%
 
 % ============== stuff below is for header\footer
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\fancyhf{}
+\fancyhead{}
 \renewcommand{\sectionmark}[1]{\markright{\textit{#1}}}
 \renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{}}
+%\fancyhead[LO]{\leftmark}
+%\fancyhead[RE]{\rightmark}
 \fancyhead[R]{\rightmark}
 \fancyhead[L]{\leftmark}
 \cfoot{\fancyplain{}{\thepage}}
