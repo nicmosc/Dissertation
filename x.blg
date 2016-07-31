@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: x.aux
+The style file: plainurl.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: references.bib.bib
+Warning--I didn't find a database entry for "website:bsl-stats"
+Warning--I didn't find a database entry for "paper:deaf-edu"
+Warning--I didn't find a database entry for "website:signature"
+Warning--I didn't find a database entry for "website:bsl-sign-bank"
+Warning--I didn't find a database entry for "website:sign-bsl"
+You've used 3 entries,
+            2849 wiz_defined-function locations,
+            640 strings with 5649 characters,
+and the built_in function-call counts, 1209 in all, are:
+= -- 127
+> -- 24
+< -- 1
++ -- 9
+- -- 6
+* -- 38
+:= -- 184
+add.period$ -- 12
+call.type$ -- 3
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 39
+empty$ -- 134
+format.name$ -- 6
+if$ -- 329
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 1
+newline$ -- 20
+num.names$ -- 6
+pop$ -- 37
+preamble$ -- 1
+purify$ -- 9
+quote$ -- 0
+skip$ -- 96
+stack$ -- 0
+substring$ -- 35
+swap$ -- 11
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 8
+width$ -- 4
+write$ -- 38
+(There were 5 warnings)
