@@ -75,8 +75,8 @@
     publisher = "Cambridge University Press",
     address   = "Cambridge, UK"
 }
-%============ PROGRAMMING ===========%
 ,
+%============ PROGRAMMING ===========%
 @misc{website:threejs,
       title = "Three.js",
       url = {http://threejs.org}
@@ -91,17 +91,142 @@
       title = "Heroku Cloud Application Platform",
       url = {https://www.heroku.com/home}
 }
-
-% =================== IMPLEMENTED PROJECTS ============= 
 ,
-@techreport{paper:translation-system,
+
+% =================== TRANSLATION THEORY ============= %
+
+@inproceedings{paper:auto-refinement,
+	author = "Ariadna Font Llitjós; Jaime G Carbonell; Alon Lavie",
+	title = "A Framework for Interactive and Automatic Refinement of Transfer-based Machine Translation",
+	booktitle = "Proceedings of the Tenth Workshop of the European Association for Machine Translation",
+	year = "2005",
+	organization = "Language Technologies Institute, Carnegie Mellon University"
+}
+,
+@techreport{paper:inducing-translation,
+	author = "Michael Carl",
+	title = "Inducing Translation Templates for Example-Based Machine Translation",
+	year = "1999",
+	institution = "Institut für Angewandte Informationsforschung"
+}
+,
+@inproceedings{paper:inferring-transfer,
+    author = "Felipe Sanchez-Martinez; Mikel L. Forcada",
+    title = "Inferring Shallow-Transfer Machine Translation Rules from Small Parallel Corpora",
+    booktitle = "Journal of Artificial Intelligence Research 34",
+    year = "2009",  
+    pages = "605-635" 
+}
+,
+@techreport{paper:whats-in-rule,
+    author = "Michel Galley; Mark Hopkins; Kevin Knight; Daniel Marcu",
+    title = "What’s in a translation rule?",
+    year = "2004",
+    institution = "Computer Science Department,Columbia University"  
+}
+,
+@inproceedings{paper:hybrid,
+    author = "Satoshi Shirai; Francis Bond; Yamato Takahashi",
+    title = "A Hybrid Rule and Example-based Method for Machine Translation",
+    booktitle = "Natural Language Processing Pacific Rim Symposium",
+    year = "1997",  
+    pages = "49-54" 
+}
+,
+@techreport{paper:serbo-macedonian,
+    author = "Hrvoje Peradin; Francis Tyers",
+    title = "A rule-based machine translation system from Serbo-Croatian to Macedonian",
+    institution = "University of Zagreb; Universitat d'Alacant",
+    year = "2012",
+    pages = "55-63" 
+}
+,
+@techreport{paper:open-source,
+    author = "V. M. Sanchez-Cartagena; F. Sanchez-Martınez, J. A. Perez-Ortiz",
+    title = "An Open-Source Toolkit for Integrating Shallow-Transfer Rules into Phrase- Based Statistical Machine Translation",
+    institution = "Universitat d'Alacant",
+    year = "2012",  
+    booktitle = "Proceedings of a Workshop Held in Gothenburg 14-15 June, 2012",
+    pages = "41-54" 
+}
+,
+@manual{man:depedencies,
+	author = "Marie-Catherine de Marneffe; Christopher D. Manning",
+	title = "Stanford typed dependencies manual",
+	year = "2008",
+	note = "Revised for the Stanford Parser v.3.5.2 in April 2015"
+}
+,
+
+% ============ SIGN LANGUAGE TRANSLATION ======== %
+
+@inproceedings{paper:zardoz,
+    author = "Tony Veale; Alan Conway",
+    title = "Crosss Modal Comprehension in ZARDOZ, An English to Sign-Language Translation System",
+    booktitle = "7th International Generation Workshop",
+    year = "1994",  
+    pages = "249-252" 
+}
+,
+@incollection{paper:zardoz-challenges,
+    author = "Tony Veale; Alan Conway; Brona Collins",
+    title = "The Challenges of Cross-Modal Translation: English to Sign Language Translation in the Zardoz System",
+    booktitle = "Machine Translation",
+    publisher = "Kluwer Academic Publishers",
+    year = "1998",  
+    number = "1",
+    volume = "13",
+    pages = "81-106" 
+}
+,
+@inproceedings{paper:statistical-sl,
+    author = "Achraf Othman; Mohamed Jemni",
+    title = "Statistical Sign Language Machine Translation: from English written text to American Sign Language Gloss",
+    booktitle = "IJCSI International Journal of Computer Science Issues",
+    year = "2011",  
+    pages = "65-73"
+}
+,
+@techreport{report:gloss-annotation,
+    author = "Onno Crasborn; Richard Bank; Kearsy Cormier",
+    title = "Digging into Signs:
+Towards a gloss annotation standard for sign language corpora",
+    year = "2015"
+}
+,
+@inproceedings{paper:drt,
+    author = "Ian Marshall and Eva Safar",
+    title = "Sign Language Translation via DRT and HPSG",
+   	booktitle = "Third International Conference, CICLing ",
+    year = "2002",  
+    pages = "58-68"
+}
+,
+@phdthesis{thesis:generating-classifiers,
+	author = "Matt Huenerfauth",
+	title = "Generating American Sign Language Classifier Predicates for English-to-ASL Machine Translation",
+	school = "University of Pennsylvania",
+	year = "2006"	
+}
+,
+@inproceedings{paper:multi-path,
+    author = "Matt Huenerfauth",
+    title = "Statistical Sign Language Machine Translation: from English written text to American Sign Language Gloss",
+    booktitle = "Proceedings of the Student Research Workshop at HLT-NAACL ",
+    year = "2004",  
+    pages = "25-30"
+}
+,
+% =================== IMPLEMENTED PROJECTS ============= %
+
+@techreport{paper:team,
     author = "Liwei Zhao; Karin Kipper; William Schuler; Christian Vogler; Martha Palmer",
     title = "A Machine Translation System from English to American Sign Language",
     institution = "University of Pennsylvania",
     year = "2000"
 }
 ,
-@techreport{paper:protoype-text-BSL,
+@techreport{paper:prototype-text,
     author = "Ian Marshall and Eva Safar",
     title = "A Prototype Text to British Sign Language (BSL) Translation System",
     institution = "School of Information Systems, University of East Anglia",  
@@ -119,9 +244,20 @@
 @inproceedings{paper:joining-hands,
     author = "Sara Morrissey and Andy Way",
     title = "Joining Hands: Developing a Sign Language machine translation system with and for the deaf community",
-    bookitle = "Conference & Workshop on Assistive Technologies for People with Vision & Hearing Impairments",
+    bookitle = "Conference & Workshop on Assistive Technologies for People with Vision & Hearing Impairment",
     year = "2007",  
     organization = "National Centre for Language Technology"
+}
+,
+@incollection{paper:manual-labour,
+    author = "Sara Morrissey; Andy Way",
+    title = "Manual labour: tackling machine translation for sign languages",
+    booktitle = "Machine Translation",
+    publisher = "Springer",
+    year = "1998",  
+    number = "1",
+    volume = "27",
+    pages = "25-64" 
 }
 ,
 @inproceedings{paper:animation-sl-synthesis,
@@ -129,12 +265,11 @@
     title = "Animation Generation Process for Sign Language Synthesis",
     bookitle = "2009 Second International Conferences on Advances in Computer-Human Interactions",
     year = "2009",  
-    pages = "386-390",  
-    organization = "IEEE Computer Society"
+    pages = "386-390"
 }
 ,
 @techreport{paper:3d-virtual-agent,
-    author = "Wanessa Machado do Amaral; José Mario De Martino; Leandro Martin Guertzenstein Angare",
+    author = "Wanessa Machado do Amaral; Jose Mario De Martino; Leandro Martin Guertzenstein Angare",
     title = "Sign Language 3D Virtual Agent",
     institution = "Department of Computer Engineering and Industrial Automation, FEEC, University of Campinas",  
     year = "2010"
@@ -143,26 +278,6 @@
 @techreport{paper:mobile-SL,
     author = "Mehrez Boulares and Mohamed Jemni",
     title = "Mobile Sign Language Translation System for Deaf Community",
-    institution = "Research Laboratory of Technologies of Information and Communication & Electrical Engineering (LaTICE) University of Tunis",  
+    institution = "Research Laboratory of Technologies of Information and Communication Electrical Engineering, University of Tunis",  
     year = "2012"
-}
-,
-
-% =================== TRANSLATION THEORY ============= 
-
-@inproceedings{paper:cross-modal-ZARDOZ,
-    author = "Tony Veale; Alan Conway",
-    title = "Crosss Modal Comprehension in ZARDOZ, An English to Sign-Language Translation System",
-    booktitle = "7th International Generation Workshop",
-    year = "1994",  
-    pages = "249-252" 
-}
-,
-@inproceedings{paper:statistical-SL-MT,
-    author = "Achraf Othman; Mohamed Jemni",
-    title = "Statistical Sign Language Machine Translation: from English written text to American Sign Language Gloss",
-    booktitle = "IJCSI International Journal of Computer Science Issues",
-    year = "2011",  
-    pages = "65-73",
-    organization = "IJCSI"  
 }

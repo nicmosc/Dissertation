@@ -11,9 +11,9 @@
 \DeclareOption{shieldcrest}{\def\logoversion{shieldcrest}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
-\LoadClass[a4paper]{report}
+%\LoadClass[a4paper]{report}
 % As an alternative to the above could use next line for twosided output
-%\LoadClass[a4paper,twoside]{report}
+\LoadClass[a4paper,twoside]{report}
 
 \RequirePackage{graphicx} % needed for latest frontpage logo
 \RequirePackage{ifthen}   % needed for option parsing for logo
@@ -35,7 +35,8 @@
 \def\degree#1{\gdef\@degree{#1}}
 % The name of your Oxford college (e.g. Christ Church, Pembroke)
 \def\college#1{\gdef\@college{#1}}
-
+% The supervisor
+\def\supervisor#1{\gdef\@supervisor{#1}}
 
 %
 % Setup choosen crest/logo
@@ -101,13 +102,15 @@
   \null\vfill
   \begin{center}
     { \Huge {\bfseries {\@title}} \par}
-{\large \vspace*{40mm} {\logo \par} \vspace*{25mm}}
+{\large \vspace*{30mm} {\logo \par} \vspace*{20mm}}
     {{\Large \@author} \par}
 {\large \vspace*{1ex}
     {{\@college} \par}
 \vspace*{1ex}
     {University of Oxford \par}
-\vspace*{25mm}
+\vspace*{2ex}
+    {Supervised by {\@supervisor} \par}
+\vspace*{22mm}
     {{\submittedtext} \par}
 \vspace*{1ex}
     {\it {\@degree} \par}
