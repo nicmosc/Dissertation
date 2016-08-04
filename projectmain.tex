@@ -7,18 +7,24 @@
 \usepackage{amsmath}
 \usepackage{url}
 \usepackage[toc,page]{appendix}
+
 \usepackage{graphicx}
 \graphicspath{{./figures/}}
 \DeclareGraphicsExtensions{.pdf,.png, .gif, .jpg}
+
 \usepackage{qtree}
 \usepackage{forest}
 \usepackage{makecell}
 \usepackage{xcolor}
 \usepackage{colortbl}
 \usepackage{fixltx2e}
+
 \usepackage{array}
 \newcolumntype{M}[1]{>{\arraybackslash}m{#1}}
 \newcolumntype{N}{@{}m{0pt}@{}}
+
+\usepackage{pgfplots, pgfplotstable}
+\pgfplotstableread[col sep = semicolon]{figures/chapter5/accuracy_data.csv}\mydata
 
 %============ BIBLIOGRAPHY AND REFS PACKAGES ========%
 \usepackage{multibib}
@@ -32,6 +38,8 @@
 
 \newcommand{\TAG}{\textsuperscript}
 \newcommand{\SUB}{\textsubscript}
+
+\usepackage{slgloss}
 
 % ========= for table stuff
 \newcommand\Tstrut{\rule{0pt}{2.6ex}}       % "top" strut
@@ -115,10 +123,10 @@ For most people around the world, communication is achieved orally by speaking. 
 The problem arises when hearing and Deaf individuals need to communicate. Deaf individuals are taught to read and write English from a young age, but it was found that they have difficulties understanding text with a reading level above that of primary school students \citex{paper:deaf-edu}. Thus it is not enough for hearing individuals to rely on written text to communicate with their community. More and more people are learning BSL even though they have perfectly fine hearing. There are certificates that can be obtained to work with Deaf individuals \citex{website:signature}. Taking lessons from BSL teachers and practising with the community helps to learn the language.
 
 Online resources such as UCL's BSL Sign Bank \citex{website:bsl-sign-bank} and SignBSL.com \citex{website:sign-bsl} offer clips of signers showing words and phrases in BSL for learners and curious people?. The main issue is that they are highly static. Analogously to an English dictionary, it is only useful for looking up individual signs and not \textit{translating} phrases. Automated translation has been an ongoing challenge in the field of
-computational linguistics, and we are finally seeing very positive results thanks to the recent developments in machine learning. Since spoken (written) languages are heavily dependent on their syntactic components, they are relatively easy to formalise in such a way that a machine can interpret a sentence and perform operations on it to transition from one language to another. More recently, there have also been attempts at doing so with signed languages such as ASL (American Sign Language) and BSL. Given that there is no formally typed grammar for BSL, it is not easy to find a model that encapsulates all key elements involved, such as facial expressions and eye gaze. In addition, since the language is only signed, the only way to see if an interpretation is correct, is through visual output. While some past implementations have been successful, due to the then high computational power necessary to run these systems, most of them are now outdated or have been left at a prototype stage. In 2006, IBM created a fully working system \citex{website:IBM} that allowed users to speak and see the translation from English to BSL in real time; however it has been disregarded and is not available any more. 
+computational linguistics, and we are finally seeing very positive results thanks to the recent developments in machine learning. Since spoken (written) languages are heavily dependent on their syntactic components, they are relatively easy to formalise in such a way that a machine can interpret a sentence and perform operations on it to transition from one language to another. More recently, there have also been attempts at doing so with signed languages such as ASL (American Sign Language) and BSL. Given that there is no formally typed grammar for BSL, it is not easy to find a model that encapsulates all key elements involved, such as facial expressions and eye gaze. In addition, since the language is only signed, the only way to see if an interpretation is correct, is through visual output. While some past implementations have been successful, due to the then high computational power necessary to run these systems, most of them are now outdated or have been left at a prototype stage. In 2006, IBM created a fully working system \citex{website:IBM} that allowed users to speak and see the translation from English to BSL in real time; however it has been disregarded and is not available any more. Nonetheless, any of the previous approaches was performed with portability in mind. What made systems such as Google Translate so popular, is that they were accessible anywhere, on any platform. Making an analogous web application for sign language translation would make it easy for anyone to access the necessary information when needed. 
 
 \section{Objectives}
-This project will build upon previous work and attempt to solve the interlingual translation from English to British Sign Language by implementing a web application where signs are visualised through a virtual avatar. Behaviour will closely follow that of other established translation systems such as Google Translate where users can type a sentence and get a result in real-time. Through rule-based translation methods (discussed in section \ref{machine translation}) and 3D animation techniques the system will allow users to not only find out what a particular sentence corresponds to in BSL, but also learn and hopefully practice their skills. Figure \ref{fig:sys-overview} shows a conceptual overview of the system pipeline; this figure will be references multiple times throughout the report.
+This project will build upon previous work and attempt to solve the interlingual translation from English to British Sign Language by implementing a web application where signs are visualised through a virtual agent. Behaviour will closely follow that of other established translation systems such as Google Translate where users can type a sentence and get a result in real-time. Through rule-based translation methods (discussed in section \ref{machine translation}) and 3D animation techniques the system will allow users to not only find out what a particular sentence corresponds to in BSL, but also learn and hopefully practice their skills. Being an online web application, it will be the first SL translation system to employ modern cross-browser languages such as JavaScript and Python to achieve portability. Figure \ref{fig:sys-overview} shows a conceptual overview of the system pipeline; this figure will be references multiple times throughout the report.
 
 \begin{figure}[h]
 	\centering
@@ -151,9 +159,9 @@ This section will give a short introduction to the linguistics of British Sign L
 
 British Sign Language, often shortened to BSL, has been an officially recognised language since 2003 \citex{website:signature}. Like English, it has its own grammar \citex{website:deafness} and its own lexicon. While not as large as its written counterpart, there are enough signs to convey the same ideas in sign language, as many can be combined to create new meanings (\textit{compounds}, see section \ref{morphology}). However BSL is not the only signed language; each country has their own with different dialects by region. ...  
 
-Since BSL can only be transmitted through signing, there is no formal written form. Many different formats exist such as Stokoe, designed for ASL by William Stokoe only for representing hand movements \citex{paper:stokoe} thus carrying no information about non-manual features, later adapted to BSL by Kyle and Woll \citex{book:bsl-stokoe}, HamNoSys (Hamburg Notation System) that can represent any signed language \citex{paper:hamnosys}, SignWriting which uses visual icons to represent parts of the body \citex{thesis:signwrite} and more. However the most commonly used method to represent sign language without needing to learn the notation (all of the above require additional knowledge to be decoded) is through \textit{gloss}. Gloss uses the most basic representation of the sign in its English written form. For example if one wants to describe a situation where a girl is eating an apple, the gloss would be GIRL EAT APPLE. The advantage of this notation is that we can clearly understand what a sentence means as we associate the sign to its English meaning. The main disadvantage though is that there is no information about the sign whatsoever, we only know that the particular sign for GIRL is signed first, followed by the sign for APPLE and so on. Table \ref{table:comparison} shows an example sign for every notation type.
+Since BSL can only be transmitted through signing, there is no formal written form. Many different formats exist such as Stokoe, designed for ASL by William Stokoe only for representing hand movements \citex{paper:stokoe} thus carrying no information about non-manual features, later adapted to BSL by Kyle and Woll \citex{book:bsl-stokoe}, HamNoSys (Hamburg Notation System) that can represent any signed language \citex{paper:hamnosys}, SignWriting which uses visual icons to represent parts of the body \citex{thesis:signwrite} and more. However the most commonly used method to represent sign language without needing to learn the notation (all of the above require additional knowledge to be decoded) is through \textit{gloss}. Gloss uses the most basic representation of the sign in its English written form. For example if one wants to describe a situation where a girl is eating an apple, the gloss would be \slg{GIRL EAT APPLE}. The advantage of this notation is that we can clearly understand what a sentence means as we associate the sign to its English meaning. The main disadvantage though is that there is no information about the sign whatsoever, we only know that the particular sign for \slg{GIRL} is signed first, followed by the sign for \slg{APPLE} and so on. Table \ref{table:comparison} shows an example sign for every notation type.
 
-Gloss notation also carries some information about non-manual features (see section \ref{non-man}) for example the sentence ``Where do you live?'' would be YOU LIVE \OVER{WHERE }\TAG{br}, where br represents a brow raise for asking questions. ?This is the format we will use for the rest of the report and it is what is used in the application as well?.
+Gloss notation also carries some information about non-manual features (see section \ref{non-man}) for example the sentence ``Where do you live?'' would be \slg{YOU LIVE}\slg[br]{WHERE}, where br represents a brow raise for asking questions. ?This is the format we will use for the rest of the report and it is what is used in the application as well?.
 
 \begin{table}[ht]
 \begin{center}
@@ -164,7 +172,7 @@ Gloss notation also carries some information about non-manual features (see sect
     & \raisebox{-.5\height}{\includegraphics[scale=0.7]{chapter2/signwrite}}
     & \raisebox{-.5\height}{\includegraphics[scale=0.6]{chapter2/stokoe}}
     & \raisebox{-.5\height}{\includegraphics[scale=0.8]{chapter2/ham}}
-    & \OVER{WHAT }\TAG{br}
+    & \slg[br]{WHAT}
     \\ \hline
 \end{tabular}
 \caption{Examples of different BSL written forms}
@@ -198,7 +206,7 @@ In English, sentences follow very similar patterns. Most often we find a noun ph
 \caption{English sentence syntax tree}
 \label{fig:english-sent}
 \end{figure}
-Proforms are ``anything that refers to, and stands in the place of, something previously identified'', that is, one may sign a word such as CAR first, and then when describing an action of the car such as ``driving in a zig-zag motion'' the dominant hand assumes the proform \textit{shape} associated with the car. Examples of hand shapes include `B' for vehicles and round/flat objects like PLATE (generally objects having 2 dimensions), `V' and `$\ddot{\text{V}}$' or `G' (one dimension) for MAN etc. Figure \ref{table:handshapes} shows examples for each\footnote{There are 22 handshapes in total and interestingly most of the shapes correspond to the ASL signed alphabet.}. When we use a specific handshape to describe the action or features of a word belonging in a specific group is what is called a classifier predicate. In another example we may want to sign ``The car goes under the bridge'', thus we would sign CAR and BRIDGE and then use the \textit{classifier} for car Veh-CL (vehicle classifier, represented by the B hand with palm facing down) and the bridge classifier 3D-CL ($\ddot{\text{B}}$ hand) to show the car moving under the bridge object.
+Proforms are ``anything that refers to, and stands in the place of, something previously identified'', that is, one may sign a word such as \slg{CAR} first, and then when describing an action of the car such as ``driving in a zig-zag motion'' the dominant hand assumes the proform \textit{shape} associated with the car. Examples of hand shapes include `B' for vehicles and round/flat objects like \slg{PLATE} (generally objects having 2 dimensions), `V' and `$\ddot{\text{V}}$' or `G' (one dimension) for \slg{MAN} etc. Figure \ref{table:handshapes} shows examples for each\footnote{There are 22 handshapes in total and interestingly most of the shapes correspond to the ASL signed alphabet.}. When we use a specific handshape to describe the action or features of a word belonging in a specific group is what is called a classifier predicate. In another example we may want to sign ``The car goes under the bridge'', thus we would sign \slg{CAR} and \slg{BRIDGE} and then use the \textit{classifier} for car \slg{Veh-CL} (vehicle classifier, represented by the B hand with palm facing down) and the bridge classifier \slg{3D-CL} ($\ddot{\text{B}}$ hand) to show the car moving under the bridge object.
 
 \begin{table}[ht]
 \begin{center}
@@ -219,7 +227,7 @@ Proforms are ``anything that refers to, and stands in the place of, something pr
 \textbf{Pronouns} are used similarly to written English but there are some differences. Firstly, there is no distinction between masculine or feminine. Instead a G shape hand is used, normally glossed as Index followed by a number to specify which part of space we are referring to. For example
 \begin{flalign*}
 &\text{John told Mary that he loved her} \\
-&= \text{-J-O-H-N- Index\SUB{1} TELL -M-A-R-Y- Index\SUB{2} Index\SUB{1} LOVE Index\SUB{2}}\tag{$\ast$}
+&= \text{\slg{-J-O-H-N-}Index\slg{_1 TELL -M-A-R-Y}Index\slg{_2}Index\slg{_1 LOVE}Index\slg{_2}}\tag{$\ast$}
 \end{flalign*}
 Subject Verb Object (SVO) is the preferred word order in spoken English, while SOV is more common in BSL. Yet, as mentioned previously many learners prefer to use SVO when signing. This works most of the time however some verbs require an SOV construct such as ME PIZZA EAT as the verb EAT is modified by the type of object that is being eaten. In other words the sign for eating a pizza will differ from the one when eating pasta.
 
@@ -287,7 +295,7 @@ However questions can also be used in sentences which are not questions by natur
 &\text{I won't go to the beach if it'll rain tomorrow} \\
 &= \text{\OVER{TOMORROW RAIN}\TAG{q} ME \OVER{NOT GO }\TAG{neg} BEACH} \tag{$\ast$}
 \end{flalign*}
-essentially turning the sentence into a rhethorical question. The same happens when we try to describe the state of an object or person like
+essentially turning the sentence into a rhetorical question. The same happens when we try to describe the state of an object or person like
 \begin{flalign*}
 &\text{The keys are in the kitchen} = \text{KEYS \OVER{WHERE }\TAG{q} KITCHEN} \\
 &\text{I live in Oxford} = \text{ME LIVE \OVER{WHERE }\TAG{q} -O-X-F-O-R-D} \tag{$\ast$}
@@ -437,7 +445,7 @@ Ultimately, while all of the above manage to achieve some sort of translation fr
 \section{Personal Work}
 It is necessary to mention that I have already worked on Sign Language with Animation. For my undergraduate project I created a system to teach BSL virtually, although this one only displayed a set of precomputed animations (animations were simply rendered in real time) and did not include any linguistics nor did it interpolate between signs. The architecture used to build the animation components was not efficient and did not fully exploit the features offered by OpenGL (which I will partially use again, through JavaScript). Since I wanted to learn more about skeletal animation I built everything from scratch in Java, something I would not do now considering the online environment and time restrictions imposed by the other aspects of the project. While I have not reused any previous material, I have used the knowledge I learnt from it in order to avoid repeating mistakes.
 \section{Summary}
-In this quite extensive chapter we have presented the basic linguistics concepts of BSL to give an idea of the complex elements to be considered when building a translation system for signed languages. We have also discussed existing approaches to this problem using a range of techniques, their drawbacks and benefits. In the next chapters the knowledge laid out in this chapter will be used to construct an online, cross-platform tool to translate from English to BSL.
+In this quite extensive chapter we have presented the basic linguistics concepts of BSL to give an idea of the complex elements to be considered when building a translation system for signed languages. We have also discussed existing approaches to this problem using a range of techniques, their drawbacks and benefits. In the next chapters the knowledge laid out in this chapter will be used to construct an online, cross-platform and portable tool to translate from English to BSL.
 
 %==================================================================================================================================================
 %##################################################################################################################################################
@@ -456,10 +464,75 @@ In this quite extensive chapter we have presented the basic linguistics concepts
 
 \chapter{Design}
 
+This chapter covers the overall design of the system, from the approach used for the machine translation problem to the user interface and interaction with the end user, including the development environment and technology choices for the implementation.
+
+
 \section{Language Choice}
+Nowadays, most web application heavily rely on the use of JavaScript libraries such as jQuery which allow for easy interaction with the user interface. With every iteration?, we are seeing more and more websites turning into full multi-purpose applications; one day we may not even need to install a program or application on our devices, as it will be simply available on a browser. Many of these modern web apps often use 2D and 3D animations, and since its release, WebGL has been the go-to library for cross-browser animation. It is a subset of the high performance graphics library OpenGL, used in a very large number of video games as well as applications like the Adobe suite, multiple computer-aided design software (CAD) and Google Earth. While WebGL can be written directly to work in browser (WebGL is programmed using the OpenGL Shading Language), the best alternative to avoid having to write an animation and rendering engine from scratch is \texttt{Three.js}\footnote{http://threejs.org}, a JavaScript API that displays 3D animations. Its skeletal animation module makes it incredibly easy to load in a model with bones and keyframe animations from popular 3D file formats and render everything into a scene. 
+
+To implement the machine translation module Python was the preferred language choice due to its extensive Natural Language Processing (NLP) library, \texttt{nltk}\footnote{http://www.nltk.org} and for its ability to combine OOP and functional programming styles. Furthermore, Python works on the server side and performs all MT operations to be returned to the browser, thus cutting down the processing workload on the browser. Since data will be travelling across different language modules, it was decided to use the Flask framework\footnote{http://flask.pocoo.org} to enable cross-language communication between the browser and the server. The application is ran on a free server account of the Heroku cloud platform \footnote{https://www.heroku.com}, ?which indeed supports Python?.
+
 \section{Translation}
+The translation module in Python was designed following the methods described in the previous work on MT for sign language (section \ref{existing methods}). Since no corpus was available, it was decided to use a Rule-Based translation approach using \textit{transfer} and \textit{direct translation} techniques. Figure \ref{fig:mt-outline} illustrates the translation pipeline. 
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.9]{chapter3/mt-outline}
+    \caption{Machine Translation module design}
+    \label{fig:mt-outline}
+\end{figure}
+
+The design of the pipeline was heavily inspired by the approach used in \citex{paper:drt}, while the tree transformation 
+
+The translation methods and algorithms are discussed in detail in section \ref{RBMT}. ...
+
 \section{User Interface}
-	\subsection{User Interaction}
+The user interface consists of only a single page, with a large view of the virtual agent and floating controls. Figure \ref{fig:lofi} shows a sketch of the interface layout, including desktop and mobile versions since the system is supposed to work on both classes of devices. 
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.9]{chapter3/lofi}
+    \caption{UI Low fidelity prototype}
+    \label{fig:lofi}
+\end{figure}
+
+The design is somewhat similar to the one used on Google Translate, with the input on the left and output on the right. But instead of language choice options here we find controls for the camera and playback. Figure \ref{fig:hifi} is displays the final web page compared to Google Translate, with the ``Translate'' button also coloured in blue for familiarity? 
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.32]{chapter3/compare}
+    \caption{UI high fidelity prototype compared to Google Translate}
+    \label{fig:hifi}
+\end{figure}
+
+At the bottom of the page are the info and options buttons that create an overlay on top of the current view (Fig. \ref{fig:info-option}):
+\begin{itemize}
+	\item The info button gives general information to the user such as a link to this thesis, a disclaimer about translation accuracy as well as available signs (see section?). In addition, a detailed explanation of the sign symbols and non-manual features displayed during playback is also made available.
+	\item Options include playback speed, automatic camera and the ability to hide or show non-manual features. 
+\end{itemize}
+Playback speed can be decreased by users that would like to follow the gestures more closely, or increased for those who prefer a faster signing style. Non-manual features such as 'q` and 'neg` are shown in the gloss output on the right hand-side, however by enabling the ''Show non-manual features`` in the options, \textit{all} features are shown: this includes facial expression for setting the time, head nods for indicating the subject etc. which are normally not included in the gloss.
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.33]{chapter3/info-option}
+    \caption{Overlay with additional information and options}
+    \label{fig:info-option}
+\end{figure}
+
+\subsection{User Interaction}
+Figure \ref{fig:flow} illustrates the main actions available to the user and how they affect the application. From the controls above the input, it is possible to pause the animation currently playing (even when in idle state), play, and change camera angle. The button press switches between default free-movement view to first person; the change can be set to automatic in the options menu for when fingerspelling \footnote{Most often than not the alphabet is illustrated as seen from the signer and not from the listener.}. The translate button is not available to click until a sentence has been entered and completed with punctuation: as will be explained further, the Stanford parser required correct sentence grammar to give most accurate results. After pressing Translate a spinning wheel is shown to alert the user that processing is currently happening. Subsequently the output from the machine translation process is return and displayed as animations. While these are playing the user still has the play/pause and view change controls as well as the ability to completely stop the animation and return to idle. 
+In addition to the above features, users can also have sentence suggestions to get started with translating (Fig. \ref{fig:suggestions}). 
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.75]{chapter3/flowchart}
+    \caption[User interaction flowchart]{User interaction flowchart. Dashed lines show system events and solid lines user actions.}
+    \label{fig:flow}
+\end{figure}
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.4]{chapter3/suggestions}
+    \caption{Sentence suggestions auto-fill}
+    \label{fig:suggestions}
+\end{figure}
+
 \section{Summary}
 
 %==================================================================================================================================================
@@ -480,7 +553,11 @@ In this quite extensive chapter we have presented the basic linguistics concepts
 \chapter{Implementation}
 \label{implementation}
 
+\section{Development Environment}
+Mention Heroku
+
 \section{Rule-Based MT in Python}
+\label{RBMT}
 	\subsection{Pipeline}
 	\subsection{System Components}
 		\subsubsection{Grammar Tree Transforms}
@@ -525,6 +602,19 @@ In this quite extensive chapter we have presented the basic linguistics concepts
  Given the above consideration of SiGML evalu- ation, it appears that until a more appropriate evaluation method is developed, glosses are the most effective means of translating SLs.29 However, we must bear in mind the caveat that all these means of representation may not appropriately encapsulate inflectional and other linguistic information that may be integral to the understand- ing of a signed utterance (FROM \citex{paper:manual-labour}).
 	\subsection{BLEU}
 	Give a table comparing this to other methods described in background
+%	\begin{center}
+%	\begin{tikzpicture}
+%	
+%		\begin{axis}[xlabel={Length}, ylabel=Accuracy, legend pos=outer north east]
+%		\addplot [only marks] table [y=Accuracy, x=Length] {\mydata};
+%		\addplot [thick, red] table[
+%    			y={create col/linear regression={y=Accuracy}}
+%		]{\mydata}; % compute a linear regression from the input table
+%		\addlegendentry{Source}
+%		\addlegendentry{Regression}
+%		\end{axis}
+%	\end{tikzpicture}
+%	\end{center}
 \section{Animation}
 \section{Survey}
 \section{Feedback}
